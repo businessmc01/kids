@@ -195,17 +195,27 @@ header{
  background:#00B0EE;
  z-index: -1000;
  .hero__container{
+     display:grid;
+     grid-template-columns:.75fr 1fr;
+     grid-row-gap:2rem;
+     place-items:center;
+
     
     .hero__content--right{
         img{
-           width:100%;
+           width:150%;
         }
     }
     
-    @extend %flex-center; 
+    
 
     @include tablet{
-        flex-direction:column;
+        grid-template-columns:1fr;
+        .hero__content--right{
+            img{
+               width:100%;
+            }
+        }
     }
 
     h1{
